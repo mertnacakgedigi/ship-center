@@ -4,11 +4,10 @@ let callback = function(details) {
         console.log("---")
 
         console.log("url", details.url)
-        console.log("body",details.requestBody);
 
         var string = ab2str(details.requestBody.raw[0].bytes);
         const data = JSON.parse(string)
-        console.log({string})
+        console.log({data : string})
         if (details.url.includes("create-shipment")){
             localStorage.setItem('create-shipment',JSON.stringify(data))
         }

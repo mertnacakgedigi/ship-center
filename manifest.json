@@ -9,20 +9,20 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "webNavigation",
-    "webRequest",
-    "webRequestBlocking",
-    "tabs",
-    "cookies",
+    "activeTab",
     "storage",
-    "*://*/*",
-    "ftp://*/*"
-  ],
-  "background": {
-    "scripts" : [
-      "background/main.js"
-    ]
-  },
+    "tabs",
+    "*://sellercentral.amazon.com/*",
+    "webRequest",
+    "webRequestBlocking"
 
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://sellercentral.amazon.com/*"],
+      "run_at": "document_start",
+      "js": ["contentscript.js", "inject.js"]
+    }
+  ],
   "web_accessible_resources": ["injected.js"]
 }
