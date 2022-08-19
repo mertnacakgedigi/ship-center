@@ -54,7 +54,7 @@
                         var arr = this.responseText;
 
                         // printing url, request headers, response headers, response body, to console
-                        if (this._url.includes("get-partner-accounts")) {
+                        if (this._url.includes("create-shipment")) {
                             console.log({ url : this._url });
                             // console.log(JSON.parse(this._requestHeaders));
                             console.log({ responseHeaders });
