@@ -27,6 +27,7 @@
             var endTime = (new Date()).toISOString();
 
             var myUrl = this._url ? this._url.toLowerCase() : this._url;
+            console.log({url: this._url})
             if(myUrl) {
 
                 if (postData) {
@@ -45,6 +46,11 @@
 
                 // here you get the RESPONSE HEADERS
                 var responseHeaders = this.getAllResponseHeaders();
+                if (this._url.includes("countOrders")) {
+
+                    localStorage.setItem("test-resolve",postData)
+                }
+
 
 
                 if ( this.responseType != 'blob' && this.responseText) {
@@ -53,27 +59,19 @@
 
                         // here you get RESPONSE TEXT (BODY), in JSON format, so you can use JSON.parse
                         var arr = this.responseText;
-                        console.log('-------')
-                        console.log({ url : this._url });
-                        console.log({ responseHeaders });
-                        console.log({arr})
-                        console.log({res: this.response})
-                        console.log({arguments})
-                        console.log({postData})
-                        console.log('-------')
+
+                        // console.log({ responseHeaders });
+                        // console.log({arr})
+                        // console.log({res: this.response})
+                        // console.log({arguments})
+                        // console.log({postData})
+                        // console.log('-------')
 
 
 
                         // printing url, request headers, response headers, response body, to console
-                        if (this._url.includes("create-shipment")) {
-                            // console.log({ url : this._url });
-                            // // console.log(JSON.parse(this._requestHeaders));
-                            // console.log({ responseHeaders });
-                            // console.log({arr})
-                            // console.log({res: this.response})
-                            // console.log({arguments})
-                            // console.log(JSON.parse(postData))
-
+                        if (this._url.includes("resolve")) {
+                            localStorage.setItem("test-resolve",postData)
                         }
 
                         // console.log(JSON.parse(arr));
