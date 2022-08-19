@@ -46,22 +46,33 @@
                 // here you get the RESPONSE HEADERS
                 var responseHeaders = this.getAllResponseHeaders();
 
+
                 if ( this.responseType != 'blob' && this.responseText) {
                     // responseText is string or null
                     try {
 
                         // here you get RESPONSE TEXT (BODY), in JSON format, so you can use JSON.parse
                         var arr = this.responseText;
+                        console.log('-------')
+                        console.log({ url : this._url });
+                        console.log({ responseHeaders });
+                        console.log({arr})
+                        console.log({res: this.response})
+                        console.log({arguments})
+                        console.log({postData})
+                        console.log('-------')
+
+
 
                         // printing url, request headers, response headers, response body, to console
                         if (this._url.includes("create-shipment")) {
-                            console.log({ url : this._url });
-                            // console.log(JSON.parse(this._requestHeaders));
-                            console.log({ responseHeaders });
-                            console.log({arr})
-                            console.log({res: this.response})
-                            console.log({arguments})
-                            console.log(JSON.parse(postData))
+                            // console.log({ url : this._url });
+                            // // console.log(JSON.parse(this._requestHeaders));
+                            // console.log({ responseHeaders });
+                            // console.log({arr})
+                            // console.log({res: this.response})
+                            // console.log({arguments})
+                            // console.log(JSON.parse(postData))
 
                         }
 
