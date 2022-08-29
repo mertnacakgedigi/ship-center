@@ -1,4 +1,3 @@
-console.log("running")
 let callback = function(details) {
     if (details.requestBody) {
         console.log("---")
@@ -9,6 +8,7 @@ let callback = function(details) {
         const data = JSON.parse(string)
         console.log({data : string})
         if (details.url.includes("create-shipment")){
+            console.log("!!!Shipment created!!!")
             localStorage.setItem('create-shipment',JSON.stringify(data))
         }
         console.log("---")
