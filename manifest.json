@@ -13,7 +13,8 @@
   "permissions": [
     "activeTab",
     "storage",
-    "webRequest"
+    "webRequest",
+    "tabs"
   ],
   "host_permissions": [
     "*://sellercentral.amazon.com/*"
