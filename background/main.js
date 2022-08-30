@@ -6,10 +6,11 @@ let callback = function(details) {
 
         var string = ab2str(details.requestBody.raw[0].bytes);
         const data = JSON.parse(string)
-        console.log({data : string})
         if (details.url.includes("create-shipment")){
             console.log("!!!Shipment created!!!")
-            localStorage.setItem('create-shipment',JSON.stringify(data))
+            chrome.storage.local.set({'create-shipment': JSON.stringify(data)}, function() {
+                console.log('Value is set to ' + data);
+            });
         }
         console.log("---")
     }
