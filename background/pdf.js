@@ -21,8 +21,8 @@ fileInput.onchange = async () => {
                     })
                 })
             }
-
-            console.log("sku and quantity added")
+           pdfDoc.removePage(pages.length - 1);
+           console.log("sku and quantity added")
             const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
             document.getElementById('pdf').src = pdfDataUri;
             var link = document.createElement('a');
