@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Ship Center",
+  "name": "Ship Center Prod",
   "description": "Add your SKU and quantity information your Amazon shipment label",
-  "version": "2.0",
+  "version": "3.0",
   "action": {
     "default_icon" : "assets/logo.png",
     "default_popup": "popup.html"
