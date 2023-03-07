@@ -1,21 +1,23 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Ship Center",
   "description": "Add your SKU and quantity information your Amazon shipment label",
   "version": "2.0",
-  "browser_action": {
+  "action": {
     "default_icon" : "assets/logo.png",
     "default_popup": "popup.html"
   },
+
   "background": {
-    "scripts": ["background/main.js"],
-    "persistent": true
+    "service_worker" : "background/main.js"
   },
   "permissions": [
     "activeTab",
     "storage",
     "webRequest",
-    "tabs",
+    "tabs"
+  ],
+  "host_permissions": [
     "*://sellercentral.amazon.com/*"
   ]
 }

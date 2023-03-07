@@ -9,7 +9,7 @@ let callback = function(details) {
         if (details.url.includes("create-shipment")){
             console.log("!!!Shipment created!!!")
             chrome.storage.local.set({'create-shipment': JSON.stringify(data)}, function() {
-                console.log('Value is set to ' + data);
+                console.log('Value is set to ' + JSON.stringify(data));
             });
         }
         console.log("---")
